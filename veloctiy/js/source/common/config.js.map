@@ -1,0 +1,1 @@
+{"version":3,"sources":["common/config.es6"],"names":[],"mappings":"AAAA;;AACA,IAAM,YAAY,EAAZ;AACN,IAAM,MAAM,EAAN;AACN,QAAQ,SAAR,GAAmB,SAAnB;AACA,QAAQ,GAAR,GAAa,GAAb","file":"common/config.js","sourcesContent":["'use strict';\r\nconst PAGE_SIZE = 10;\r\nconst NUM = 20;\r\nexports.PAGE_SIZE =PAGE_SIZE;\r\nexports.NUM =NUM;"],"sourceRoot":"/source/"}
