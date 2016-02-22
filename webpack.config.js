@@ -10,12 +10,13 @@ module.exports = {
     entry: genEntries(),
     output: {
         path: webpackBuidPath,
+        sourceMapFilename: "[file].map",
         filename: "[name].js"
     },
     resolve: {
-       
+
         alias: {
-            'jquery':path.resolve(basePath, 'js') + '/source/common/jquery'
+            'jquery': path.resolve(basePath, 'js') + '/source/common/jquery'
         }
     },
     plugins: [
@@ -25,14 +26,33 @@ module.exports = {
             "window.jQuery": "jquery"
         }),
         new webpack.optimize.CommonsChunkPlugin('common.js')
-    ]
+    ],
+    /*module: {
+        loaders: [{
+            // "test" is commonly used to match the file extension
+            test: /\.jsx$/,
+
+            // "include" is commonly used to match the directories
+            include: [
+                path.resolve(__dirname, "app/src"),
+                path.resolve(__dirname, "app/test")
+            ],
+
+            // "exclude" should be used to exclude exceptions
+            // try to prefer "include" when possible
+
+            // the "loader"
+            loader: "babel-loader"
+        }]
+    },*/
+    devtool: "#cheap-module-source-map"
 };
 
 
 function genEntries() {
-   
 
- console.log('-----'+process.cwd());
+
+    console.log('-----' + process.cwd());
     var jsDir = path.resolve(basePath + '/js/source', 'entry');
     var names = fs.readdirSync(jsDir);
     var map = {};
