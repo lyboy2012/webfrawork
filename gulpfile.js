@@ -12,9 +12,9 @@ const gulp = require('gulp'),
 
 
 
-gulp.task('scripts', () => {
-    return gulp.src([basePath + '/js/source/**/*.es6'])
-        .pipe(plugins.plumber({}, true, function(err){
+//gulp.task('scripts', () => {
+    //return gulp.src([basePath + '/js/source/**/*.es6'])
+        /*.pipe(plugins.plumber({}, true, function(err) {
             console.log('ERROR!!!!');
             console.log(err);
         }))
@@ -23,30 +23,25 @@ gulp.task('scripts', () => {
             presets: ['es2015']
         }))
 
-        .pipe(plugins.sourcemaps.write('.'))        //.pipe(plugins.jshint(basePath + '/js/source/.jshintrc'))
+    .pipe(plugins.sourcemaps.write('.')) //.pipe(plugins.jshint(basePath + '/js/source/.jshintrc'))
         //.pipe(plugins.jshint.reporter('default'))
         //.pipe(plugins.concat('main.js')) //合并成一个js
         .pipe(gulp.dest(basePath + '/js/source')) //生成源文件合并文件
         .pipe(browserSync.stream()); //压缩后再生成js 文件
 
-});
-gulp.task('webpack-script', function() {
+});*/
+gulp.task('webpack-script',/* ['scripts'], */() => {
     return gulp.src([basePath + '/js/source/**/*.js'])
-        .pipe(plugins.webpack(webpackConf))
+        .pipe(plugins.plumber({}, true, function(err) {
+            console.log('ERROR!!!!');
+            console.log(err);
+        }))
+
+    .pipe(plugins.webpack(webpackConf))
         .pipe(gulp.dest(webpackBuidPath))
         .pipe(browserSync.stream());
 });
 
-
-/*gulp.task('scripts',function(){
-  return gulp.src('src/js/source/index/index.js')
- .pipe(plugins.webpack(webpackConfig))
-
-  //.pipe(plugins.sourcemaps.write('../'))
-  .pipe(gulp.dest('src/js'))//生成源文件合并文件
-  .pipe(browserSync.stream());//压缩后再生成js 文件
-
-});*/
 
 
 
@@ -124,7 +119,7 @@ gulp.task('clean', () => {
         .pipe(plugins.clean());
 });
 // watch files for changes and reload
-gulp.task('serve', ['html', 'styles', 'scripts','webpack-script'], () => {
+gulp.task('serve', ['html', 'styles', 'webpack-script'], () => {
     browserSync.init({
         server: {
             baseDir: './' + basePath, //根路径
@@ -141,9 +136,9 @@ gulp.task('default', ['serve'], () => {
     gulp.watch(basePath + '/css/**/*.scss', ['styles'], browserSync.reload);
 
     // 监听es6变化
-    gulp.watch(basePath + '/js/source/**/*.es6', ['scripts'], browserSync.reload);
+    gulp.watch(basePath + '/js/source/**/*.@(es6|js)', ['webpack-script'], browserSync.reload);
 
     // 监听js变化
-    gulp.watch(basePath + '/js/source/**/*.js', ['webpack-script'], browserSync.reload);
-    
+  //  gulp.watch(basePath + '/js/source/**/*.js', ['webpack-script'], browserSync.reload);
+
 });

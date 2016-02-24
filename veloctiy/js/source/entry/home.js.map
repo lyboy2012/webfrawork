@@ -1,1 +1,0 @@
-{"version":3,"sources":["entry/home.es6"],"names":[],"mappings":";;;;;;;;AACA,QAAQ,GAAR,CAAY,EAAE,IAAF,EAAQ,IAAR,KAAe,qBAAf,GAAqC,iBAAO,SAAP,CAAjD","file":"entry/home.js","sourcesContent":["import config from '../common/config.js'\r\nconsole.log($('h1').text()+'-------------- home'+config.PAGE_SIZE);"],"sourceRoot":"/source/"}

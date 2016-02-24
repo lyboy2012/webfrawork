@@ -1,4 +1,4 @@
 module.exports ={
-	basePath : 'veloctiy',
-	buildPath : 'buildVeloctiy'
+	basePath : 'velocity',
+	buildPath : 'buildVelocity'
 }

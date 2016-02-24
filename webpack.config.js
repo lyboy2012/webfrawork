@@ -10,11 +10,15 @@ module.exports = {
     entry: genEntries(),
     output: {
         path: webpackBuidPath,
+        devtoolModuleFilenameTemplate: '[resource-path]',
         sourceMapFilename: "[file].map",
         filename: "[name].js"
     },
     resolve: {
-
+        root: [
+            path.resolve(basePath, 'js/source')
+        ],
+        extensions: ['.es6', '.js'],
         alias: {
             'jquery': path.resolve(basePath, 'js') + '/source/common/jquery'
         }
@@ -27,6 +31,16 @@ module.exports = {
         }),
         new webpack.optimize.CommonsChunkPlugin('common.js')
     ],
+    module: {
+        loaders: [{
+            test: /\.es6?$/,
+            exclude: /(node_modules|bower_components)/,
+            loader: 'babel', // 'babel-loader' is also a legal name to reference
+            query: {
+                presets: ['es2015']
+            }
+        }]
+    },
     /*module: {
         loaders: [{
             // "test" is commonly used to match the file extension
@@ -52,16 +66,15 @@ module.exports = {
 function genEntries() {
 
 
-    console.log('-----' + process.cwd());
+   
     var jsDir = path.resolve(basePath + '/js/source', 'entry');
     var names = fs.readdirSync(jsDir);
     var map = {};
     names.forEach(function(name) {
-
-        var m = name.match(/(.+)\.js$/);
+        var m = name.match(/(.+)\.es6$/);
         var entry = m ? m[1] : '';
-        var entryPath = entry ? path.resolve(jsDir, name) : '';
-
+        //var entryPath = entry ? path.resolve(jsDir, name) : '';
+        var entryPath = entry ? './' + basePath + '/js/source/entry/' + entry : '';
         if (entry) map[entry] = entryPath;
     });
 
