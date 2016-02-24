@@ -1,0 +1,42 @@
+@charset "utf-8";
+@import "compass/reset";
+@import "compass/support";
+@import "lib/mixins";
+@import "lib/variables";
+@import "compass/css3";
+@import "compass/utilities";
+@import 'susy';
+$susy: ( global-box-sizing: border-box, use-custom: (rem: true), columns: 12, // The number of columns in your grid
+gutters: 0, // The size of a gutter in relation to a single column
+);
+@include border-box-sizing;
+a {
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+        text-decoration: none;
+    }
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased;
+    @include box-sizing(border-box);
+}
+
+html,
+body {
+    font-family: Microsoft Yahei, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    @include font-size(16px);
+    line-height: 1.5;
+    background: #f1f2f3;
+}
+
+* {
+    font-family: Microsoft Yahei, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.container {
+}
+@import "lib/font-awesome/font-awesome";

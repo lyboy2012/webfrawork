@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sources":["velocity/js/source/entry/index.es6"],"sourcesContent":["'use strict';\r\nimport config from '../common/config'\r\n//alert(config.NUM);\r\nconsole.log($('h1').text()+'-------------- index'+config.NUM);\n\n\n/** WEBPACK FOOTER **\n ** velocity/js/source/entry/index.es6\n **/"],"mappings":";;;;AAAA;AACA;;;;;;;;AAEA;;;;","sourceRoot":""}

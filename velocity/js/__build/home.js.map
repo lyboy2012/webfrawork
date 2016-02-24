@@ -1,0 +1,1 @@
+{"version":3,"file":"home.js","sources":["velocity/js/source/entry/home.es6"],"sourcesContent":["import config from '../common/config'\r\nconsole.log($('h1').text()+'-------------- home'+config.PAGE_SIZE);\n\n\n/** WEBPACK FOOTER **\n ** velocity/js/source/entry/home.es6\n **/"],"mappings":";;;;;;;;;;;;AACA;;;;","sourceRoot":""}
