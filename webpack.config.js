@@ -20,7 +20,10 @@ module.exports = {
         ],
         extensions: ['.es6', '.js'],
         alias: {
-            'jquery': path.resolve(basePath, 'js') + '/source/common/jquery'
+            'jquery': path.resolve(basePath, 'js') + '/source/common/jquery',
+            'react': path.resolve(basePath, 'js') + '/source/common/react',
+            'react-dom': path.resolve(basePath, 'js') + '/source/common/react-dom'
+            
         }
     },
     plugins: [
@@ -37,7 +40,7 @@ module.exports = {
             exclude: /(node_modules|bower_components)/,
             loader: 'babel', // 'babel-loader' is also a legal name to reference
             query: {
-                presets: ['es2015']
+                presets: ['es2015','react']
             }
         }]
     },

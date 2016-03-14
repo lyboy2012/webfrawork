@@ -1,12 +1,13 @@
 'use strict';
 import config from '../common/config'
-//alert(config.NUM);
-console.log($('h1').text()+'-------------- index'+config.NUM);
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Hello from '../components/Hello';
 
-const names = {"a":"a","b":"b"};
-function a(){
-	let arrNames = Array.prototype.slice(arguments,0);
+let attachElement = document.getElementById('react-app');
 
-	$('h1').text(Object.prototype.toString.call(arrNames)==='[object Array]')
-}
-a(1,2,3)
+ReactDOM.render(<Hello phrase="ES6"/>, attachElement); // 实例化根组件，并启动应用
+
+
+
+
