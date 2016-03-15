@@ -190,7 +190,7 @@ gulp.task('default', ['serve'], () => {
     gulp.watch(basePath + '/css/**/*.scss', ['styles'], browserSync.reload);
 
     // 监听es6变化
-    gulp.watch(basePath + '/js/source/**/*.@(es6|js)', ['webpack-script'], browserSync.reload);
+    gulp.watch(basePath + '/js/source/**/*.@(jsx|js)', ['webpack-script'], browserSync.reload);
 
     // 监听js变化
     //  gulp.watch(basePath + '/js/source/**/*.js', ['webpack-script'], browserSync.reload);
