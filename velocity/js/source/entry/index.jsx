@@ -9,5 +9,7 @@ var data = [
     {id: 1, author: "Pete Hunt", text: "This is one comment--"},
     {id: 2, author: "Jordan Walke", text: "This is *another* comment--"}
 ];
-ReactDOM.render(<CommentBox data={data} />, attachElement); // 实例化根组件，并启动应用
+ReactDOM.render(<CommentBox url="/js/data/comments.js" />, attachElement); // 实例化根组件，并启动应用
+
+$('#react-app').html();
 

@@ -18,13 +18,9 @@ module.exports = {
         root: [
             path.resolve(basePath, 'js/source')
         ],
-        extensions: ['.jsx', '.js'],
+        extensions: ['','.jsx', '.js'],
         alias: {
-            'jquery': path.resolve(basePath, 'js') + '/source/common/jquery',
-            'react': path.resolve(basePath, 'js') + '/source/common/react',
-            'react-dom': path.resolve(basePath, 'js') + '/source/common/react-dom',
-            'marked': path.resolve(basePath, 'js') + '/source/common/marked'
-            
+            'jquery': path.resolve(basePath, 'js') + '/source/common/jquery'
         }
     },
     plugins: [
