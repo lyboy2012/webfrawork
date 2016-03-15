@@ -6,13 +6,20 @@ class CommentBox extends React.Component {
         super();
         this.state = {data: []};
     }
+    componentDidMount(){
+        var data =  [
+            {id: 1, author: "Pete Hunt", text: "This is one comment--"},
+            {id: 2, author: "Jordan Walke", text: "This is *another* comment--"}
+        ];
+        this.setState({data: data});
+    }
     render() {
         return <div className="commentBox">
             <h1>Comments</h1>
-            /*<CommentList data={this.props.data}/>*/
             <CommentList data={this.state.data} />
             <CommentForm />
         </div>;
     }
 }
+
 export default CommentBox;

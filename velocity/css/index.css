@@ -85,15 +85,35 @@ body {
   font-family: Microsoft Yahei, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.test {
-  font-size: 30px;
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: baseline;
+  height: 200px;
+  border: 1px solid #0000ff;
 }
-.test :nth-child(-n+2) {
-  color: red;
+.container :nth-of-type(2) {
+  background: yellow;
+  flex-grow: 1;
+  height: 80px;
+  width: 80px;
+}
+.container :nth-of-type(1) {
+  background: red;
+  padding-top: 10px;
+  flex-grow: 2;
+  flex-shrink: 0.5;
+  height: 100px;
+  width: 100px;
 }
 
-.t-of-type-chid :nth-of-type(2) {
-  color: yellow;
+.test span {
+  background: red;
+  height: 30px;
+  width: 30px;
+  color: #fff;
+  padding-top: 20px;
+  margin-top: 50px;
 }
 
 /*!
