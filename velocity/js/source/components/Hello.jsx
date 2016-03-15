@@ -4,5 +4,4 @@ class Hello extends React.Component {
     return <h1>Hello from {this.props.phrase}!</h1>;
   }
 }
-
 export default Hello;

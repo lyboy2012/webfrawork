@@ -18,7 +18,7 @@ module.exports = {
         root: [
             path.resolve(basePath, 'js/source')
         ],
-        extensions: ['.es6', '.js'],
+        extensions: ['.jsx', '.js'],
         alias: {
             'jquery': path.resolve(basePath, 'js') + '/source/common/jquery',
             'react': path.resolve(basePath, 'js') + '/source/common/react',
@@ -36,7 +36,7 @@ module.exports = {
     ],
     module: {
         loaders: [{
-            test: /\.es6?$/,
+            test: /\.jsx?$/,
             exclude: /(node_modules|bower_components)/,
             loader: 'babel', // 'babel-loader' is also a legal name to reference
             query: {
@@ -74,7 +74,7 @@ function genEntries() {
     var names = fs.readdirSync(jsDir);
     var map = {};
     names.forEach(function(name) {
-        var m = name.match(/(.+)\.es6$/);
+        var m = name.match(/(.+)\.jsx$/);
         var entry = m ? m[1] : '';
         //var entryPath = entry ? path.resolve(jsDir, name) : '';
         var entryPath = entry ? './' + basePath + '/js/source/entry/' + entry : '';
