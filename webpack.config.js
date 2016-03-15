@@ -22,7 +22,8 @@ module.exports = {
         alias: {
             'jquery': path.resolve(basePath, 'js') + '/source/common/jquery',
             'react': path.resolve(basePath, 'js') + '/source/common/react',
-            'react-dom': path.resolve(basePath, 'js') + '/source/common/react-dom'
+            'react-dom': path.resolve(basePath, 'js') + '/source/common/react-dom',
+            'marked': path.resolve(basePath, 'js') + '/source/common/marked'
             
         }
     },
